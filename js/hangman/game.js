@@ -12,16 +12,16 @@ var GAME_WORDS = [ // List of words available when playing
         'mango', 
         'cherry', 
         'grape', 
-		'pear', 
+	'pear', 
         'pineapple', 
         'kiwi', 
         'plum', 
         'watermelon', 
         'peach', 
-		'blueberry', 
-		'coconut', 
-		'cherimoya', 
-		'passionfruit'
+	'blueberry', 
+	'coconut', 
+	'cherimoya', 
+	'passionfruit'
     ], 
     GAME_MASKED_WORD = '', // Stores the masked word to be discovered
     GAME_SELECTED_WORD = '', // Stores the readable word
