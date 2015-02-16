@@ -7,7 +7,7 @@ Classic guessing game implemented **100%** in `JavaScript` *(1 Player vs Compute
 - Can be found @ [JSFiddle](http://jsfiddle.net/oscarj24/97r1n2ct/)
 - [Rawgit](http://rawgit.com/) may be useful for including new scripts to the current implementation.
 
-### Possible enhancements for v2.0 and further
+### Possible enhancements for v2.0 and later
 
 - Add a *"Hint"* button for helping the player during a game.
 - Add word categories and make the player capable to select one when starting a game.
@@ -19,4 +19,4 @@ Classic guessing game implemented **100%** in `JavaScript` *(1 Player vs Compute
 - Generate a minified version of the scripts.
 
 ### Note
-This is a **100%** `JavaScript` game and I know more features could be added but that will involve a whole refactor, use server side and a database which is ***NOT*** aligned to the original idea.
+This is a **100%** `JavaScript` game and I know more features could be added but that will involve a whole refactor, use server side and a database which is **NOT** aligned to the original idea.
