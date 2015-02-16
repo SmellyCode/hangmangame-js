@@ -1,5 +1,5 @@
 # Hangman Game JS v1.0
-Classic guessing game implemented ***100%*** in `JavaScript` *(1 Player vs Computer)*. By now, the game is based on *"Fruit"* words but some enhancements are expected for a future version.
+Classic guessing game implemented **100%** in `JavaScript` *(1 Player)*. By now, the game is based on *"Fruit"* words but some enhancements are expected for a future version.
 
 ![Hangman Game JS v1.0 Screenshot](https://cloud.githubusercontent.com/assets/11019675/6219521/a51b6aa4-b5f8-11e4-97e8-481f9172cae8.PNG)
 
@@ -20,4 +20,4 @@ Classic guessing game implemented ***100%*** in `JavaScript` *(1 Player vs Compu
 - Generate a minified version of the scripts.
 
 #### Note
-This is a ***100%*** `JavaScript` game and I know more features could be added but that will involve a whole refactor, use server side and a database which is ***NOT*** aligned to the original idea.
+This is a **100%** `JavaScript` game and I know more features could be added but that will involve a whole refactor, use server side and a database which is **NOT** aligned to the original idea.
