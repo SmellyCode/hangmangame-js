@@ -4,8 +4,8 @@ Classic guessing game implemented 100% in JavaScript (1 Player vs Computer). By 
 ![Hangman Game JS v1.0 Screenshot](https://cloud.githubusercontent.com/assets/11019675/6218516/b4b9066c-b5ec-11e4-8b00-a915e49d5d6d.PNG)
 
 # Live demo
-- Can be found @ JSFiddle: http://bitly.com/1BhC6Vt
-- [Rawgit](http://rawgit.com/) may be useful for including scripts.
+- Can be found @ [JSFiddle](http://jsfiddle.net/oscarj24/97r1n2ct/)
+- [Rawgit](http://rawgit.com/) may be useful for including new scripts to the current implementation.
 
 # Possible enhancements for v2.0 and further
 
