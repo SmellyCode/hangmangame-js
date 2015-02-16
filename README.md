@@ -1,12 +1,12 @@
 # Hangman Game JS v1.0
 Classic guessing game implemented 100% in JavaScript (1 Player vs Computer). By now, the game is based on "Fruit" words but some enhancements are expected for a future version.
 
-![Hangman Game JS v1.0 screenshot](https://cloud.githubusercontent.com/assets/11019675/6218516/b4b9066c-b5ec-11e4-8b00-a915e49d5d6d.PNG)
+![Hangman Game JS v1.0 Screenshot](https://cloud.githubusercontent.com/assets/11019675/6218516/b4b9066c-b5ec-11e4-8b00-a915e49d5d6d.PNG)
 
 # Live demo:
-Can be found @ http://jsfiddle.net/oscarj24/97r1n2ct/
+Can be found @ JSFiddle: http://bitly.com/1BhC6Vt
 
-# Possible enhancements for v2.0 and further...
+# Possible enhancements for v2.0 and further
 
 1. Add a "Hint" button for helping the player during a game.
 2. Add word categories and make the player capable to select one when starting a game.
