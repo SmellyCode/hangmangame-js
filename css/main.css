@@ -1,0 +1,30 @@
+﻿@charset 'utf-8';
+
+.text-medium {
+    font-size: 3em;
+}
+
+.text-small {
+    font-size: 1.5em;
+}
+
+div.logo {
+	background-image: url('../images/logo.png') !important;
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 120px;
+	height: 200px;
+}
+
+input[type="button"] {
+	cursor: pointer;
+}
+
+span#msg {
+    color: red;
+    font-weight: bold;
+}
+
+input#letter {
+    width: 30px;
+}
