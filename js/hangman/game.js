@@ -107,6 +107,8 @@ function start() {
  * Guess button handler
  */
 function guess() {
+    $("#letter").select();
+    
     var ui = GAME_UI_COMPONENTS, 
         words = GAME_WORDS, 
         matches = false, 
