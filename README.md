@@ -5,7 +5,7 @@ Classic guessing game implemented 100% in JavaScript (1 Player vs Computer). By 
 
 # Live demo
 - Can be found @ JSFiddle: http://bitly.com/1BhC6Vt
-- Rawgit (http://rawgit.com/) may be useful for including scripts.
+- [Rawgit](http://rawgit.com/) may be useful for including scripts.
 
 # Possible enhancements for v2.0 and further
 
