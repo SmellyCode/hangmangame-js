@@ -16,6 +16,7 @@ Classic guessing game implemented **100%** in `JavaScript` *(1 Player vs Compute
 - Add sounds to the game.
 - Add game settings like *"Sound On/Off"* and word complexity like *"5-10 characters" (Use `cookies` to achieve this)*.
 - Improve buttons style and add effects to the game *(`jQuery` animate and effects like "explode" are some ideas)*.
+- Improve game design.
 - Generate a minified version of the scripts.
 
 #### Note
