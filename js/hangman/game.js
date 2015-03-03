@@ -4,30 +4,21 @@
  */
  
 // Game constants
-var GAME_WORDS = [ // List of words available when playing
-        'apple', 
-        'orange', 
-        'banana', 
-        'lime', 
-        'mango', 
-        'cherry', 
-        'grape', 
-	'pear', 
-        'pineapple', 
-        'kiwi', 
-        'plum', 
-        'watermelon', 
-        'peach', 
-	'blueberry', 
-	'coconut', 
-	'cherimoya', 
-	'passionfruit'
-    ], 
+var GAME_WORDS = { // List of categories and words for each one.
+        sports : ['football', 'baseball', 'tennis', 'basketball'],
+        movies : ['spiderman', 'jobs', 'tesis', 'birdman'],
+        fruits : ['apple','orange','banana','lime','mango', 
+                'cherry','grape','pear','pineapple','kiwi', 
+                'plum','watermelon','peach','blueberry', 
+                'coconut','cherimoya','passionfruit'],
+        colors : ['red', 'green', 'blue', 'black']
+    }, 
     GAME_MASKED_WORD = '', // Stores the masked word to be discovered
     GAME_SELECTED_WORD = '', // Stores the readable word
     GAME_PLAYER_ATTEMPTS = 0, // Stores player attempts when failing
     GAME_RANDOM_NUMBER = 0, // Random number to pick a word
     GAME_MAX_ATTEMPTS = 7, // Max. player attempts before a game over
+    GAME_CATEGORY = '', // Stores the value for selected category
     GAME_UI_COMPONENTS = { // UI components declaration
         start: $('#start'), 
         reset: $('#reset'), 
@@ -35,11 +26,14 @@ var GAME_WORDS = [ // List of words available when playing
         guess: $('#guess'), 
         msg: $('#msg'), 
         word: $('#word'), 
-        letter: $('#letter')
+        letter: $('#letter'),
+        category: $('#category'),
+        labelcategory: $('#category_selected')
     }, 
     GAME_UI_SECTIONS = { // UI sections declaration
         menu: $('#menu'), 
-        game: $('#game')
+        game: $('#game'),
+        msg: $('#msg')
     };
 
 $(function() {;
@@ -58,6 +52,13 @@ $(function() {;
         guess();
     });
     
+    // Guess enter key handler
+    ui.letter.keypress(function(e) {
+        if (e.which == 13) {
+            guess();
+        }
+    }); 
+
     // Play Again button handler
     ui.reset.on('click', function(e) {
         reset();
@@ -77,6 +78,7 @@ function init() {
     var sections = GAME_UI_SECTIONS;
     sections.menu.show();
     sections.game.hide();
+    populateCategory();
     reset();
 };
 
@@ -85,32 +87,46 @@ function init() {
  */
 function start() {
     var ui = GAME_UI_COMPONENTS, 
-        sections = GAME_UI_SECTIONS, 
-        words = GAME_WORDS;
-    
-    sections.menu.hide();
-    sections.game.show();
-    
-    GAME_RANDOM_NUMBER = Math.floor(Math.random() * words.length);
-    
-    for (var i = 0; i < words[GAME_RANDOM_NUMBER].length; ++i) {
-        GAME_MASKED_WORD += '*';
-    }
-    
-    GAME_SELECTED_WORD = words[GAME_RANDOM_NUMBER];
+        sections = GAME_UI_SECTIONS;
 
-    ui.word.html(GAME_MASKED_WORD);
-    ui.letter.focus();
+    GAME_CATEGORY = ui.category.val();
+    
+    // Get list of the words for selected category
+    var words = GAME_WORDS[GAME_CATEGORY];
+
+    // Check category's option selected
+    if ( GAME_CATEGORY == 0 ) {
+        showMsg(' You need to select a category ;) ');
+        
+    } else {
+        // Show category selected
+        ui.labelcategory.html(GAME_CATEGORY.toUpperCase());
+        
+        sections.menu.hide();
+        sections.game.show();
+        
+        GAME_RANDOM_NUMBER = Math.floor(Math.random() * words.length);
+        
+        for (var i = 0; i < words[GAME_RANDOM_NUMBER].length; ++i) {
+            GAME_MASKED_WORD += '*';
+        }
+        
+        GAME_SELECTED_WORD = words[GAME_RANDOM_NUMBER];
+    
+        ui.word.html(GAME_MASKED_WORD);
+        ui.letter.focus();
+        
+        showMsg('');
+    }    
 };
 
 /**
  * Guess button handler
  */
 function guess() {
-    $("#letter").select();
     
     var ui = GAME_UI_COMPONENTS, 
-        words = GAME_WORDS, 
+        words = GAME_WORDS[GAME_CATEGORY], 
         matches = false, 
         choice;
 
@@ -118,6 +134,7 @@ function guess() {
     showMsg('');
     
     if (ui.letter && ui.letter.val()) {
+        ui.letter.select();
         choice = $.trim(ui.letter.val().toLowerCase());
     }
     
@@ -171,6 +188,19 @@ function reset() {
 };
 
 /**
+ * Used to populate all categories into 'select' item.
+ */
+function populateCategory() {
+    var ui = GAME_UI_COMPONENTS;
+    $.each(GAME_WORDS, function(key) {  
+        ui.category
+            .append($('<option></option>')
+            .attr("value",key)
+            .text(key)); 
+    });
+}
+
+/**
  * Handler when player lose the game
  */
 function lose() {
@@ -178,6 +208,7 @@ function lose() {
     showMsg('You Lose! :(');
     ui.word.html(GAME_SELECTED_WORD);
     ui.guess.hide();
+    ui.letter.val('');
 };
 
 /**
@@ -188,6 +219,7 @@ function win() {
     showMsg('You Win! :)');
     ui.word.html(GAME_SELECTED_WORD);
     ui.guess.hide();
+    ui.letter.val('');
 };
 
 /**

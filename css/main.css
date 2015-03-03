@@ -20,7 +20,7 @@ input[type="button"] {
 	cursor: pointer;
 }
 
-span#msg {
+#msg {
     color: red;
     font-weight: bold;
 }

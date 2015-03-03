@@ -10,16 +10,22 @@
 </head>
 <body>
 	<div id="wrapper">
+
+		<div id="msg" class="text-small"></div><br><br>
 		<div id="menu">
 			<span class="text-medium">Hangman Game!</span><br>
 			<span class="text-small">Fruits edition</span><br><br>
 			<div class="logo"></div><br><br>
+			<select id="category"> 
+	            <option value="0" selected>Select a category</option>
+	        </select> 
 			<input type="button" id="start" value="Start Game"/>
 		</div>
 		<div id="game">
-			<span id="msg" class="text-small"></span><br><br>
+			<span id="category_selected" class="text-medium"></span><br><br>
 			<span class="text-small">Type a letter:</span>
 			<input type="text" id="letter" value="" maxlength="1"/><br><br>
+			<span>(press enter to "guess")</span><br><br>
 			<span class="text-small">Select an action:</span><br><br>
 			<input type="button" id="guess" value="Guess"/>
 			<input type="button" id="reset" value="Play Again"/>
