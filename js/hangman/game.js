@@ -24,11 +24,10 @@ var GAME_WORDS = { // List of categories and words for each one.
         reset: $('#reset'), 
         back: $('#back'), 
         guess: $('#guess'), 
-        msg: $('#msg'), 
         word: $('#word'), 
         letter: $('#letter'),
         category: $('#category'),
-        labelcategory: $('#category_selected')
+        labelCategory: $('#labelCategory')
     }, 
     GAME_UI_SECTIONS = { // UI sections declaration
         menu: $('#menu'), 
@@ -53,7 +52,7 @@ $(function() {;
     });
     
     // Guess enter key handler
-    ui.letter.keypress(function(e) {
+    ui.letter.on('keyup', function(e) {
         if (e.which == 13) {
             guess();
         }
@@ -69,6 +68,9 @@ $(function() {;
     ui.back.on('click', function(e) {
         init();
     });
+
+    // Populate categories values into "select" item
+    populateCategory();
 });
 
 /**
@@ -78,7 +80,6 @@ function init() {
     var sections = GAME_UI_SECTIONS;
     sections.menu.show();
     sections.game.hide();
-    populateCategory();
     reset();
 };
 
@@ -87,20 +88,22 @@ function init() {
  */
 function start() {
     var ui = GAME_UI_COMPONENTS, 
-        sections = GAME_UI_SECTIONS;
+        sections = GAME_UI_SECTIONS,
+        words = '';
 
     GAME_CATEGORY = ui.category.val();
     
     // Get list of the words for selected category
-    var words = GAME_WORDS[GAME_CATEGORY];
+    words = GAME_WORDS[GAME_CATEGORY];
 
     // Check category's option selected
     if ( GAME_CATEGORY == 0 ) {
         showMsg(' You need to select a category ;) ');
         
     } else {
+
         // Show category selected
-        ui.labelcategory.html(GAME_CATEGORY.toUpperCase());
+        ui.labelCategory.html(parseValue(GAME_CATEGORY));
         
         sections.menu.hide();
         sections.game.show();
@@ -195,8 +198,8 @@ function populateCategory() {
     $.each(GAME_WORDS, function(key) {  
         ui.category
             .append($('<option></option>')
-            .attr("value",key)
-            .text(key)); 
+            .prop("value", key)
+            .text(parseValue(key)));
     });
 }
 
@@ -226,9 +229,19 @@ function win() {
  * Use to print UI messages for the player
  */
 function showMsg(msg) {
-    var ui = GAME_UI_COMPONENTS;
+    var ui = GAME_UI_SECTIONS;
     ui.msg.html(msg);
 };
+
+/**
+ * This method convert the first letter of the string
+ * to upper case.
+ */
+function parseValue(key) {
+    return (key + '').replace(/\b[a-z]/g, function(letter) {
+        return letter.toUpperCase();
+    });
+}
 
 /**
  * Check game status, if player is going to lose the game
