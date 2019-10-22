@@ -7,7 +7,7 @@ By now the game is based on *"Fruit"* words but some enhancements are expected f
 
 #### Live demo
 - Can be found [here](http://jsfiddle.net/oscarj24/45zpg42w/embedded/result/)
-- [Rawgit](http://rawgit.com/) may be useful for including new scripts to the current implementation. *(deprecated)*
+- [Rawgit](http://rawgit.com/) may be useful for including new scripts to the current implementation *(deprecated)*.
 
 #### Possible enhancements for v2.0 and further
 
