@@ -11,12 +11,12 @@ By now the game is based on *"Fruit"* words but some enhancements are expected f
 
 #### Possible enhancements for v2.0 and further
 
-- Add a *"Hint"* button for helping the player during a game.
-- Add word categories and make the player capable to select one when starting a game.
-- Add a timer for each game to know how much time is pending before the player gets a *"Game Over"*.
+- Add a *"Hint"* button for helping a player during the game.
+- Add word categories and make a player capable to select one when starting the game.
+- Add a timer for each game to know how much time is pending before a player gets a *"Game Over"*.
 - Add scores to the game *(Score calculation could depend on how fast the player finishes a game without hints)*.
-- Add sounds to the game.
+- Add sound effects to the game.
 - Add game settings like *"Sound On/Off"* and word complexity like *"5-10 characters" (Use `cookies` to achieve this)*.
 - Improve buttons style and add effects to the game *(`jQuery` animate and effects like "explode" are some ideas)*.
 - Improve game design.
-- Generate a minified version of the scripts.
+- Minify scripts.
